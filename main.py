@@ -31,6 +31,9 @@ if conn:
         """)
         conn.commit()
 
+@app.route('/')
+def hello():
+    return "Hello, Serverless! \n", 200, {'Content-type': 'text/plan'}
 @app.route('/save', methods=['POST'])
 def save_message():
     if not conn:
